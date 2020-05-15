@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { SmurfTemplate } from './SmurfTemplate'
 import { SmurfsContext } from '../contexts/SmurfsContext'
 
@@ -16,6 +16,11 @@ export const Smurfs = () => {
 
 export default Smurfs;
 
+
+
+// const addItem = item => {
+//     setCart([...cart, item]);
+// };
 
 
 // onst Products = () => {

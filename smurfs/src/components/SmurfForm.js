@@ -16,13 +16,17 @@ class SmurfForm extends Component {
             [e.target.name]: e.target.value
         })
     }
+
     handleSubmit = e => {
+        e.preventDefault()
         axios
             .post('http://localhost:3333/smurfs', this.state)
             .then(res => {
                 console.log(res)
+    
             })
     }
+
     render() {
         return (
             <div>
@@ -30,21 +34,21 @@ class SmurfForm extends Component {
                     <input
                         placeholder='Name'
                         type="text"
-                        name="item"
+                        name="name"
                         value={this.state.name}
                         onChange={this.handleChanges}
                     />
                     <input
                         placeholder='Age'
                         type="text"
-                        name="item"
+                        name="age"
                         value={this.state.age}
                         onChange={this.handleChanges}
                     />
                     <input
                         placeholder='Height'
                         type="text"
-                        name="item"
+                        name="height"
                         value={this.state.height}
                         onChange={this.handleChanges}
                     />

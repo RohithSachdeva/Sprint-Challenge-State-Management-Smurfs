@@ -1,24 +1,24 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { Component } from "react";
 import "./App.css";
-import { SmurfsContext } from '../contexts/SmurfsContext'
+import { SmurfsContext, SmurfsProvider } from '../contexts/SmurfsContext'
 import SmurfForm from '../components/SmurfForm'
 import { Smurfs } from './Smurf';
-import axios from 'axios';
+
 
 
  
 
-    const [smurfs, setSmurfs] = useState([])
+    // const [smurfs, setSmurfs] = useState([])
   
-    useEffect(() => {
-      axios
-      .get('http//localhost:3333/smurfs')
-      .then(res => {
-        console.log(res)
-        setSmurfs(res.data)
-      })
-      .catch(err => console.log(err))
-    }, [])
+    // useEffect(() => {
+    //   axios
+    //   .get('http//localhost:3333/smurfs')
+    //   .then(res => {
+    //     console.log(res)
+    //     setSmurfs(res.data)
+    //   })
+    //   .catch(err => console.log(err))
+    // }, [])
   
   
 
@@ -26,13 +26,13 @@ class App extends Component {
       
   render() {
     return (
-      <SmurfsContext.Provider value={{ smurfs, setSmurfs }}>
+      <SmurfsProvider>
       <div className="App">
-       
-      </div>
       <SmurfForm />
       <Smurfs />
-      </SmurfsContext.Provider>
+      </div>
+      
+      </SmurfsProvider>
       
     );
   }
