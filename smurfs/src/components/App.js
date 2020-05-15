@@ -1,38 +1,35 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import "./App.css";
-import {SmurfsContext} from '../contexts/SmurfsContext'
+import { SmurfsContext } from '../contexts/SmurfsContext'
+import SmurfForm from '../components/SmurfForm'
 
-const smurfData = () =>{
-  const [smurfs, setSmurfs] = useState([])
+ 
 
-  useEffect(() => {
-    axios
-    .get('http//localhost:3333/smurfs')
-    .then(res => {
-      setSmurfs(res.data)
-    })
-    .catch(err => console.log(err))
-  }, [])
-}
+    const [smurfs, setSmurfs] = useState([])
+  
+    useEffect(() => {
+      axios
+      .get('http//localhost:3333/smurfs')
+      .then(res => {
+        console.log(res)
+        setSmurfs(res.data)
+      })
+      .catch(err => console.log(err))
+    }, [])
+  
+  
 
-const smurfPost = (new) => {
-  axios
-  .post('http//localhost:3333/smurfs', new)
-  .then (res => {
-    console.log(res)
-  })
-  .catch(err => console.log(err.res))
-}  
 class App extends Component {
+      
   render() {
     return (
-      //<SmurfsContext.provider 
+      <SmurfsContext.Provider value={{ smurfs, setSmurfs }}>
       <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
+       
       </div>
+      <SmurfForm />
+      </SmurfsContext.Provider>
+      
     );
   }
 }
@@ -41,6 +38,31 @@ export default App;
 
 
 
+
+//Use axios get on 
+
+
+// const smurfData = () =>{
+//   const [smurfs, setSmurfs] = useState([])
+
+//   useEffect(() => {
+//     axios
+//     .get('http//localhost:3333/smurfs')
+//     .then(res => {
+//       setSmurfs(res.data)
+//     })
+//     .catch(err => console.log(err))
+//   }, [])
+// }
+
+// const smurfPost = (new) => {
+//   axios
+//   .post('http//localhost:3333/smurfs', new)
+//   .then (res => {
+//     console.log(res)
+//   })
+//   .catch(err => console.log(err.res))
+// } 
 
 //Need template/card for smurfs.
 // Need Axios call ... on App or context .  const [smurfs, setSmurfs] = useState([])  and use effect 
