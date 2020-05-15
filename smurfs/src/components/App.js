@@ -1,7 +1,10 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 import "./App.css";
 import { SmurfsContext } from '../contexts/SmurfsContext'
 import SmurfForm from '../components/SmurfForm'
+import { Smurfs } from './Smurf';
+import axios from 'axios';
+
 
  
 
@@ -28,6 +31,7 @@ class App extends Component {
        
       </div>
       <SmurfForm />
+      <Smurfs />
       </SmurfsContext.Provider>
       
     );
