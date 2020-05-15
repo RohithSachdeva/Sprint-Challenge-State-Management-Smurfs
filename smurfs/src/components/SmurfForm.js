@@ -23,7 +23,7 @@ class SmurfForm extends Component {
             .post('http://localhost:3333/smurfs', this.state)
             .then(res => {
                 console.log(res)
-    
+                
             })
     }
 

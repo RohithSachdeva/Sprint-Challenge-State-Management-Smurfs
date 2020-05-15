@@ -14,7 +14,25 @@ export const Smurfs = () => {
 }
 
 
+
 export default Smurfs;
+
+
+// const myData = useContext(ContextObject);
+
+// const addItem = item => {
+// 		setCart([...cart, item]);
+// 	};
+
+
+
+
+
+
+
+
+
+
 
 
 
