@@ -1,16 +1,18 @@
 import React from 'react'
 
 
-export const SmurfTemplate = ({name, age, height}) => {
+function Smurf(props) {
     return (
         <div>
-            <h2>{name}</h2>
-            <h3>{age}</h3>
-            <h3>{height}</h3>
+            <h2>Name: {props.smurf.name}</h2>
+            <h3>Age: {props.smurf.age}</h3>
+            <h3>Height: {props.smurf.height}</h3>
             
         </div>
     )
 }
+
+export default Smurf;
 
 
 

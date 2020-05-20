@@ -1,13 +1,14 @@
 import React, { useContext, useState } from 'react'
-import { SmurfTemplate } from './SmurfTemplate'
+import Smurf from './SmurfTemplate'
 import { SmurfsContext } from '../contexts/SmurfsContext'
 
-export const Smurfs = () => {
-    const [smurfs, setSmurfs] = useContext(SmurfsContext)
+function Smurfs() {
+    const { smurfs } = useContext(SmurfsContext)
     return (
         <div>
-            {smurfs.map(smurfs => (
-                <SmurfTemplate name={smurfs.name} age={smurfs.age} height={smurfs.height} />
+            {smurfs.map(smurf => (
+               
+               <Smurf smurf={smurf} />
             ))}
         </div>
     )
@@ -17,6 +18,9 @@ export const Smurfs = () => {
 
 export default Smurfs;
 
+
+
+// using one context point, can set all 3 attributes to one {} 
 
 // const myData = useContext(ContextObject);
 
